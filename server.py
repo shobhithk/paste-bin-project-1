@@ -5,7 +5,7 @@ from uuid import uuid4
 
 app = Flask(__name__)
 app.secret_key = "hello"
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./sqlite3'
 db = SQLAlchemy(app)
 
 
@@ -34,7 +34,7 @@ def home():
 
 @app.route("/<usr>")
 def user(usr):
-    found_user = data.query.filter_by(id=usr).first()
+    found_user = data.query.filter_by(uid = usr).first()
     return f'<h1>{found_user.text}</h1>'
 
 
