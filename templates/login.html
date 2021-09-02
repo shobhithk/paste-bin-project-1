@@ -8,7 +8,7 @@
 <h2> Sign in/up Form</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form method="post">
+		<form method="post" action="/login" name="signupform">
 			<h1>Create Account</h1>
 			
 			<input type="text" placeholder="user name" name="username"/>
@@ -17,11 +17,11 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form method="post">
+		<form method="post" action="/login" name="loginform" >
 			<h1>Sign in</h1>
 			
-			<input type="text" placeholder="user name" name="username"/>
-			<input type="password" placeholder="Password" name="password"/>
+			<input id="name" type="text" placeholder="user name" name="username"/>
+			<input id="passwd" 	type="password" placeholder="Password" name="password"/>
 			<button type="submit" onclick="loginFunc()">Sign In</button>
 		</form>
 	</div>

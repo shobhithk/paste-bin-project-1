@@ -30,7 +30,7 @@
     </nav><!-- #header-nav -->
   </header> 
     
-    <form id="bla"  class="text-center"action = "" method = "post">
+    <form id="bla"  class="text-center"action = ""name="textform" method = "post">
         
       <h3 >Typing...</h3 >
       <br>
@@ -43,6 +43,7 @@
         <!-- <span class="glyphicon glyphicon-edit"></span> -->
         
         <input id="sf" type = "submit" value = "submit" onclick="submitFunc()" />
+      </form>  
       <!-- <span class="glyphicon glyphicon-trash"></span> -->
           <span id="copy"class="glyphicon glyphicon-paste"></span> copy 
       </div>
@@ -52,7 +53,7 @@
         <button type="button"> delete</button>
 
     </div>   -->
-    <div class="text-center">  
+    <div class="text-center hide">  
       <div id="url" >
         <input id="ef" type="button" value="edit" onclick="editFunc()"/>
   
@@ -63,7 +64,7 @@
         </div>  
       </div >   
 
-   </form>  
+   
    <script src="{{url_for('static',filename='jquery-2.1.4.min.js')}}"></script>
    <script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
    <script src="{{url_for('static',filename='script.js')}}"></script>
