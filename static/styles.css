@@ -1,0 +1,171 @@
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #379683;
+}  
+    
+/* button {   
+       background-color: #6b913d;   
+       width: 30%;  
+        color: orange;   
+        padding: 5px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }    */
+     
+ input[type=text]{   
+        width: 30%;   
+        margin: 3px 3px;  
+        padding: 5px 5px;   
+        display: inline-block;   
+        border: 1px solid rgb(6, 7, 6); 
+        border-radius: 12px;  
+        box-sizing: border-box;    
+     }  
+ /* button:hover {   
+        opacity: 0.7;   
+    }    */
+  /* .cancelbtn {   
+        width: auto;   
+        /* padding: 10px 18px;   */
+        /* margin: 10px 5px;  
+    }    */
+         */
+     
+ .container {   
+        width:30%;
+        border-radius: 8px;
+    }   
+    form#bla {
+      /* width: 1000px;
+      height: 500px; */
+      overflow:auto;
+      
+      /* border: 15px solid green; */
+      /* padding: 50px; */
+      /* margin: 20px; */
+      /* margin: 20px 424px; */
+    }
+    textarea{
+      background-color: #0d0d0e;
+      color:rgb(239, 243, 12);
+    }
+    #header-nav {
+      background-color: #1f2833;
+      border-radius: 0;
+      height: 80px;
+      border: 0;
+    }
+.navbar-brand {
+  float:inline-start;
+}
+.rgt{
+  float: right;
+  color: #379683;
+}
+    .navbar-brand h1 { /* Restaurant name */
+  font-family: 'Lora', serif;
+  color: #ecf0ea;
+  font-size:2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: .75;
+}
+form h3{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+#nav-list {
+  margin-top: 1px;
+}
+#nav-list a {
+  color: #0c0b0b;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+#nav-list a span {
+  font-size: 2em;
+}
+input[type=submit]{
+  background-color: rgb(158, 224, 158);
+  padding: 5px 20px;   
+  margin:20px 50px;
+}
+input[value=delete]{
+  background-color: rgb(240, 179, 164);
+  margin-right:250px;
+}
+input[value=edit]{
+  background-color: rgb(243, 248, 168);
+}
+#copy{
+  font-size:x-large;
+}
+#copy:hover{
+  transform: scale(1.5);  
+}
+input[type=submit] {
+  
+  width: 150px;
+	height: 50px;
+	cursor: pointer;
+	background: #6b75d4;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 10px 25px #57aba7, 0px -10px 25px #a6fffa, inset 0px -5px 10px #57aba7, inset 0px 5px 10px #a6fffa;
+	font-family: 'Damion', cursive;
+	color: white;
+	font-size: 20px;
+	transition: 500ms;
+}
+input[type=submit]:hover{
+  border: 2px solid #6dd6d1;
+	animation: hueRotation 2s linear infinite;
+}
+
+input[value=edit] {
+  width: 150px;
+	height: 50px;
+	cursor: pointer;
+	background: #d4b86b;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 10px 25px #57aba7, 0px -10px 25px #a6fffa, inset 0px -5px 10px #57aba7, inset 0px 5px 10px #a6fffa;
+	font-family: 'Damion', cursive;
+	color: white;
+	font-size: 20px;
+	transition: 500ms;
+}
+input[value=edit]:hover{
+  border: 2px solid #6dd6d1;
+	animation: hueRotation 2s linear infinite;
+}
+input[value=delete] {
+  width: 150px;
+	height: 50px;
+	cursor: pointer;
+	background: #d46b82;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 10px 25px #57aba7, 0px -10px 25px #a6fffa, inset 0px -5px 10px #57aba7, inset 0px 5px 10px #a6fffa;
+	font-family: 'Damion', cursive;
+	color: white;
+	font-size: 20px;
+	transition: 500ms;
+}
+input[value=delete  ]:hover{
+  border: 2px solid #6dd6d1;
+	animation: hueRotation 2s linear infinite;
+}
+#login{
+  margin-top: 30px;
+}
+textarea::placeholder{
+  color:white;
+}
