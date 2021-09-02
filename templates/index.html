@@ -1,15 +1,82 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PASTE BIN</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='bootstrap.min.css')}}"
+    />
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
+
   <body>
-    <form  method="post">
-      <p>Input here</p>
-      <p><input type="text" name="name" /></p>
-      <p><input type="submit" value="submit"/></p> 
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-brand">
+            <h1>store share</h1>
+          </div>
+          <div class="rgt">
+            <a href="login/">
+              <button id="login">Log in/up</button>
+            </a>
+          </div>
+        </div>
+        <!-- .container -->
+      </nav>
+      <!-- #header-nav -->
+    </header>
+
+    <form id="bla" class="text-center" action="" method="post">
+      <h3>Typing...</h3>
+      <br />
+      <textarea
+        rows="30"
+        cols="200"
+        name="textform"
+        placeholder="Type here..."
+        autofocus
+        required
+      >
+{{content}}</textarea
+      >
+      <br />
+      <!-- <span class="glyphicon glyphicon-edit"></span> -->
+      <input id="sf" type="submit" value="submit" onclick="submitFunc()" />
     </form>
+    <div>
+      <!-- <span class="glyphicon glyphicon-trash"></span> -->
+      <span id="copy" class="glyphicon glyphicon-paste"></span> copy
+    </div>
+    <!-- <div id="respone">
+        <button type="button">edit</button>
+        <button type="button"> Submit</button>
+        <button type="button"> delete</button>
+    </div>   -->
+    <div class="text-center hide">
+      <div id="url">
+        <input id="ef" type="button" value="edit" onclick="editFunc()" />
+
+        <input type="text" placeholder="Enter URL" name="" required />
+        <input id="df" type="button" value="delete" onclick="deleteFunc()" />
+      </div>
+    </div>
+
+    <script src="{{url_for('static',filename='jquery-2.1.4.min.js')}}"></script>
+    <script src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='script.js')}}"></script>
   </body>
 </html>
