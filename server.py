@@ -8,6 +8,7 @@ app.secret_key = "hello"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./sqlite3'
 db = SQLAlchemy(app)
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100))
@@ -53,10 +54,10 @@ def login():
         return render_template('login.html')
 
 
-@app.route('/index.html/<username>', methods=['GET', 'POST'])
+@app.route('/<username>', methods=['GET', 'POST'])
 def home(username):
     if request.method == "POST":
-        text = request.form['name']
+        text = request.form['textform']
         uid = str(uuid4())
         new_data = Data(uid, text)
         db.session.add(new_data)
@@ -68,10 +69,16 @@ def home(username):
         return redirect(url_for("home", username=username))
 
 
-@app.route("/<usr>/<uid>")
+@app.route("/<usr>/<uid>",methods=['GET','POST'])
 def user(usr, uid):
-    found_user = Data.query.filter_by(uid=usr).first()
-    return f'<h1>{found_user.text}</h1>'
+    found_data = Data.query.filter_by(uid=uid).first()
+    if request.method == "POST":
+        text = request.form['textform']
+        found_data.text = text
+        db.session.commit()
+        return render_template('/index.html',content=found_data.text)
+    else:
+        return render_template('/index.html',content=found_data.text)
 
 
 if __name__ == '__main__':
