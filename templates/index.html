@@ -31,7 +31,7 @@
           </div>
           <div class="rgt">
             <a href="/login">
-              <button id="login">LogOut</button>
+              <button id="login"onclick="logout()">LogOut</button>
             </a>
           </div>
         </div>
@@ -46,6 +46,7 @@
       <textarea
         rows="30"
         cols="200"
+        id="tf"
         name="textform"
         placeholder="Type here..."
         autofocus
@@ -57,15 +58,15 @@
       <!-- <span class="glyphicon glyphicon-edit"></span> -->
       <input id="sf" type="submit" value="submit" onclick="submitFunc()" />
     </form>
-    <div>
+    
       <!-- <span class="glyphicon glyphicon-trash"></span> -->
-      <span id="copy" class="glyphicon glyphicon-paste"></span> copy
-    </div>
+   
     <!-- <div id="respone">
         <button type="button">edit</button>
         <button type="button"> Submit</button>
         <button type="button"> delete</button>
     </div>   -->
+
     <div class="text-center hide">
       <div id="url">
         <input id="ef" type="button" value="edit" onclick="editFunc()" />

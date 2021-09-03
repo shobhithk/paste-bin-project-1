@@ -62,7 +62,9 @@ def home(username):
         new_data = Data(uid, text)
         db.session.add(new_data)
         db.session.commit()
-        return redirect(url_for("user", usr=username,uid=uid))
+        # return redirect(url_for("user", usr=username,uid=uid))
+        return (url_for("user", usr=username,uid=uid))
+
     elif request.method == 'GET':
         return render_template('/index.html')
     else:
@@ -76,9 +78,9 @@ def user(usr, uid):
         text = request.form['textform']
         found_data.text = text
         db.session.commit()
-        return render_template('/index.html',content=found_data.text)
+        return render_template('/text.html',content=found_data.text)
     else:
-        return render_template('/index.html',content=found_data.text)
+        return render_template('/text.html',content=found_data.text)
 
 
 if __name__ == '__main__':
