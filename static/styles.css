@@ -20,7 +20,7 @@ Body {
         display: inline-block;   
         border: 1px solid rgb(6, 7, 6); 
         border-radius: 12px;  
-        box-sizing: border-box;    
+        box-sizing: border-box;   
      }  
  /* button:hover {   
         opacity: 0.7;   
@@ -49,6 +49,8 @@ Body {
     textarea{
       background-color: #0d0d0e;
       color:rgb(239, 243, 12);
+      font-size: 1.2em;
+
     }
     #header-nav {
       background-color: #1f2833;
@@ -125,7 +127,8 @@ input[type=submit] {
 	transition: 500ms;
 }
 input[type=submit]:hover{
-  border: 2px solid #6dd6d1;
+  border: 2px solid #cf0404;
+  background-color:#cf0404;
 	animation: hueRotation 2s linear infinite;
 }
 
@@ -167,5 +170,5 @@ input[value=delete  ]:hover{
   margin-top: 30px;
 }
 textarea::placeholder{
-  color:white;
+  color:#cccc00;
 }
