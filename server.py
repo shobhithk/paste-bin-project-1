@@ -45,19 +45,23 @@ def login():
         if "username" in session:
             session.pop('username')
         session['username'] = username
-        if "uid" in session:
-            return redirect(url_for("user" ,usr=session['usr'],uid=session['uid']))
-        elif User.query.filter_by(username=username).first():
+        if User.query.filter_by(username=username).first():
             userdata = User.query.filter_by(username=username).first()
             if userdata.password == password:
-                return redirect(url_for("home", username=username))
+                if "uid" in session:
+                    return redirect(url_for("user" ,usr=session['usr'],uid=session['uid']))
+                else:
+                    return redirect(url_for("home", username=username))
             else:
                 return render_template('login.html')
         else:
             newData = User(username, password)
             db.session.add(newData)
             db.session.commit()
-            return redirect(url_for("home", username=username))
+            if "uid" in session:
+                return redirect(url_for("user" ,usr=session['usr'],uid=session['uid']))
+            else:
+                return redirect(url_for("home", username=username))
     else:
         return render_template('login.html')
 
