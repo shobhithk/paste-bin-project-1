@@ -89,7 +89,7 @@ def user(usr, uid):
     found_data = Data.query.filter_by(uid=uid).first()
     if request.method == "POST":
         if "username" in session:
-            if session['username'] == user:
+            if session['username'] == usr:
                 text = request.form['textform']
                 found_data.text = text
                 db.session.commit()
