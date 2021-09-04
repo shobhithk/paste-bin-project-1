@@ -4,7 +4,7 @@ from uuid import uuid4
 
 
 app = Flask(__name__)
-app.secret_key = "hello"
+app.config['SECRET_KEY'] = str(uuid4())
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./sqlite3'
 db = SQLAlchemy(app)
 
@@ -46,7 +46,7 @@ def login():
             session.pop('username')
         session['username'] = username
         if "uid" in session:
-            return redirect (url_for("user" ,usr=session.get('usr',None),uid=session.get('uid',None) ))
+            return redirect(url_for("user" ,usr=session['usr'],uid=session['uid']))
         elif User.query.filter_by(username=username).first():
             userdata = User.query.filter_by(username=username).first()
             if userdata.password == password:
@@ -95,9 +95,9 @@ def user(usr, uid):
                 db.session.commit()
                 return render_template('/index.html', content=found_data.text)
             else:
-                return render_template('/text.html', content=found_data.text, message=True)
+                return render_template('/text.html', content=found_data.text, message="*only user can edit this")
         else:
-            return render_template('/login.html')
+            return redirect(url_for("login"))
     else:
         return render_template('/text.html', content=found_data.text)
 
