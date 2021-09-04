@@ -44,8 +44,6 @@ def login():
         password = request.form['password']
         if "username" in session:
             session.pop('username')
-            session.pop('is_logged_in')
-        session["is_logged_in"] = True
         session['username'] = username
         if "uid" in session:
             return redirect (url_for("user" ,usr=session.get('usr',None),uid=session.get('uid',None) ))
@@ -90,14 +88,16 @@ def user(usr, uid):
     session['uid']=uid
     found_data = Data.query.filter_by(uid=uid).first()
     if request.method == "POST":
-        if not session.get("is_logged_in",None):
+        if "username" in session:
+            if session['username'] == user:
+                text = request.form['textform']
+                found_data.text = text
+                db.session.commit()
+                return render_template('/index.html', content=found_data.text)
+            else:
+                return render_template('/text.html', content=found_data.text, message=True)
+        else:
             return render_template('/login.html')
-        if not session['username'] == usr:
-            return render_template('/text.html', content=found_data.text)
-        text = request.form['textform']
-        found_data.text = text
-        db.session.commit()
-        return render_template('/index.html', content=found_data.text)
     else:
         return render_template('/text.html', content=found_data.text)
 

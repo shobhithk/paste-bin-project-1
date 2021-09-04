@@ -46,7 +46,8 @@
     </form>
     <div class="text-center">
       <h4>
-        If you want to edit or delete,please do <a href="/login">login</a>.
+        {{message}}
+        If you want to edit or delete,please do <a class="btn btn-primary" href="/login" role="button">login</a>.
       </h4>
     </div>
     <script src="{{url_for('static',filename='jquery-2.1.4.min.js')}}"></script>
