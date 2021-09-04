@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <title>PASTE BIN</title>
     <link
       rel="stylesheet"
       href="{{url_for('static',filename='bootstrap.min.css')}}"
     />
+    <link rel="icon" type="image" href="{{url_for('static',filename='favicon.ico')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
     <link
       href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700"
@@ -41,14 +41,15 @@
     <form class="text-center" method="post">
       <p style="color: red; font-size: 2rem;">{{message}}</p>
       <button class="btn btn-primary font-aw" type="submit" >
-        <i class="far fa-save"></i>
-        save
+        <i class="far fa-edit"></i>
+        Edit
       </button>
       <textarea rows="30" cols="150" name="textform" readonly>{{content}}</textarea>
     </form>
     <div class="text-center">
       <h4>
-        If you want to edit or delete,please do <a class="btn btn-primary" href="/login" role="button">login</a>.
+        If you want to edit or delete,please do <a class="btn btn-primary" href="/login" role="button">login</a><br><br>
+        Create a <strong>PASTE BIN</strong> of your own, <a class="btn btn-primary" href="/" role="button">Click Me!</a> 
       </h4>
     </div>
     <script src="{{url_for('static',filename='jquery-2.1.4.min.js')}}"></script>
