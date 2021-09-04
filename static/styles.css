@@ -172,3 +172,11 @@ input[value=delete  ]:hover{
 textarea::placeholder{
   color:#cccc00;
 }
+
+.font-aw {
+  margin-left:70%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: right;
+}
