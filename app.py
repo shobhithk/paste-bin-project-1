@@ -5,7 +5,7 @@ from uuid import uuid4
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = str(uuid4())
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://nazbkzqakmmlvq:9262a24dfd7a32eb186defffbe44693784175f715996ed9f2bf59daf7904714c@ec2-54-147-93-73.compute-1.amazonaws.com:5432/db73ekupbt6vl2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://eclbuzhsszbgam:ba01811aa693605f094913db90c1fd14a5506b2171c9cef41aabe96a4cf058cd@ec2-18-235-45-217.compute-1.amazonaws.com:5432/ddr2m55bc0g5g9'
 #'sqlite:///./sqlite3'
 db = SQLAlchemy(app)
 
@@ -108,7 +108,6 @@ def user(usr, uid):
 
 
 if __name__ == '__main__':
-    db.create_all()
     app.run()
 
 
