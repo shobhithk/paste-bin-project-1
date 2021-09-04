@@ -4,7 +4,7 @@ from uuid import uuid4
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = str(uuid4())
+app.config['SECRET_KEY'] = 'hello_world'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./sqlite3'
 db = SQLAlchemy(app)
 
